@@ -1,36 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Pack">
+      <UniqueIdentifier>{A4978A7C-90CE-8B0D-39BB-711025D1070F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Pack\Events">
+      <UniqueIdentifier>{08C37CB7-7478-F5AC-FD6C-EF836921ECB0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Pack\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Pack.h" />
     <ClInclude Include="src\Pack\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>Pack</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pack.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Pack\Core.h">
+      <Filter>Pack</Filter>
     </ClInclude>
     <ClInclude Include="src\Pack\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>Pack</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Events\ApplicationEvent.h">
+      <Filter>Pack\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Events\Event.h">
+      <Filter>Pack\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Events\KeyEvent.h">
+      <Filter>Pack\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Events\MouseEvents.h">
+      <Filter>Pack\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Log.h">
+      <Filter>Pack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pack\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Pack</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pack\Log.cpp">
+      <Filter>Pack</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
