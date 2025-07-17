@@ -34,6 +34,7 @@
     <ClInclude Include="src\Pack\Log.h">
       <Filter>Pack</Filter>
     </ClInclude>
+    <ClInclude Include="src\Packpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pack\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Pack\Log.cpp">
       <Filter>Pack</Filter>
     </ClCompile>
+    <ClCompile Include="src\Packpch.cpp" />
   </ItemGroup>
 </Project>

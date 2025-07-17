@@ -19,6 +19,9 @@ project "Pack"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "Packpch.h"
+    pchsource "Pack/src/Packpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
