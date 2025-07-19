@@ -7,6 +7,9 @@
     <Filter Include="Pack\Events">
       <UniqueIdentifier>{08C37CB7-7478-F5AC-FD6C-EF836921ECB0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pack\Windows">
+      <UniqueIdentifier>{DEA5F7F2-CA08-8797-738E-BF4D5FD0521A}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pack.h" />
@@ -31,8 +34,20 @@
     <ClInclude Include="src\Pack\Events\MouseEvents.h">
       <Filter>Pack\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pack\Layer.h">
+      <Filter>Pack</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\LayerStack.h">
+      <Filter>Pack</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pack\Log.h">
       <Filter>Pack</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Windows\Window.h">
+      <Filter>Pack\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Windows\WindowsWindow.h">
+      <Filter>Pack\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Packpch.h" />
   </ItemGroup>
@@ -40,8 +55,17 @@
     <ClCompile Include="src\Pack\Application.cpp">
       <Filter>Pack</Filter>
     </ClCompile>
+    <ClCompile Include="src\Pack\Layer.cpp">
+      <Filter>Pack</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pack\LayerStack.cpp">
+      <Filter>Pack</Filter>
+    </ClCompile>
     <ClCompile Include="src\Pack\Log.cpp">
       <Filter>Pack</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pack\Windows\WindowsWindow.cpp">
+      <Filter>Pack\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Packpch.cpp" />
   </ItemGroup>

@@ -41,6 +41,7 @@ namespace Pack
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
 		inline virtual std::string ToString() const { return GetName();}
+		inline bool getHandled() const { return m_Handeled; }
 
 		inline bool IsInCategory(EventCategory category)
 		{
