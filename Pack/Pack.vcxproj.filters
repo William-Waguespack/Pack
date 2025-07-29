@@ -7,8 +7,17 @@
     <Filter Include="Pack\Events">
       <UniqueIdentifier>{08C37CB7-7478-F5AC-FD6C-EF836921ECB0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Pack\Windows">
-      <UniqueIdentifier>{DEA5F7F2-CA08-8797-738E-BF4D5FD0521A}</UniqueIdentifier>
+    <Filter Include="Pack\ImGui">
+      <UniqueIdentifier>{CE373799-BAEF-78E6-23F7-51420FCE13D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +43,9 @@
     <ClInclude Include="src\Pack\Events\MouseEvents.h">
       <Filter>Pack\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pack\ImGui\ImGuiLayer.h">
+      <Filter>Pack\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pack\Layer.h">
       <Filter>Pack</Filter>
     </ClInclude>
@@ -43,17 +55,30 @@
     <ClInclude Include="src\Pack\Log.h">
       <Filter>Pack</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pack\Windows\Window.h">
-      <Filter>Pack\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pack\Windows\WindowsWindow.h">
-      <Filter>Pack\Windows</Filter>
+    <ClInclude Include="src\Pack\Window.h">
+      <Filter>Pack</Filter>
     </ClInclude>
     <ClInclude Include="src\Packpch.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pack\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Pack\KeyCodes.h" />
+    <ClInclude Include="src\Pack\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pack\Application.cpp">
       <Filter>Pack</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pack\ImGui\ImGuiLayer.cpp">
+      <Filter>Pack\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Pack\Layer.cpp">
       <Filter>Pack</Filter>
@@ -64,9 +89,13 @@
     <ClCompile Include="src\Pack\Log.cpp">
       <Filter>Pack</Filter>
     </ClCompile>
-    <ClCompile Include="src\Pack\Windows\WindowsWindow.cpp">
-      <Filter>Pack\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="src\Packpch.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

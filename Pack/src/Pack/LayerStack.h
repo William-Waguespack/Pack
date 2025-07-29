@@ -17,8 +17,8 @@ namespace Pack
 		void PopLayer(Layer* layer);
 		void PopOverlay(Layer* overlay);
 
-		inline std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
-		inline std::vector<Layer*>::iterator end() { return m_Layers.end(); }
+		std::vector<Layer*>::iterator begin();
+		std::vector<Layer*>::iterator end();
 
 	private:
 		std::vector<Layer*> m_Layers;

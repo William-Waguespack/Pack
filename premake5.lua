@@ -1,5 +1,6 @@
 workspace "Pack"
     architecture "x64"
+    startproject "Sandbox"
 
     configurations
     {
@@ -12,7 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Pack/vendor/GLFW/include"
+IncludeDir["Glad"] = "Pack/vendor/Glad/include"
+IncludeDir["ImGui"] = "Pack/vendor/imgui"
+
 include "Pack/vendor/GLFW"
+include "Pack/vendor/Glad"
+include "Pack/vendor/imgui"
 
 
 project "Pack"
@@ -36,12 +42,16 @@ project "Pack"
     {
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/src",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 
@@ -54,7 +64,8 @@ project "Pack"
         defines
         {
             "PACK_PLATFORM_WINDOWS",
-            "PACK_BUILD_DLL"
+            "PACK_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         
@@ -67,15 +78,18 @@ project "Pack"
 
     filter "configurations:Debug"
         defines "PACK_DEBUG"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "PACK_RELEASE"
+        runtime "Release"
         optimize "On"
         
 
     filter "configurations:Dist"
         defines "PACK_DIST"
+        runtime "Release"
         optimize "On"
 
 project "Sandbox"
@@ -117,12 +131,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "PACK_DEBUG"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "PACK_RELEASE"
+        runtime "Release"
         optimize "On"
         
     filter "configurations:Dist"
         defines "PACK_DIST"
+        runtime "Release"
         optimize "On"

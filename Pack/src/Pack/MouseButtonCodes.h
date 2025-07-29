@@ -1,0 +1,14 @@
+#pragma once
+
+#define PACK_MOUSE_BUTTON_1         0
+#define PACK_MOUSE_BUTTON_2         1
+#define PACK_MOUSE_BUTTON_3         2
+#define PACK_MOUSE_BUTTON_4         3
+#define PACK_MOUSE_BUTTON_5         4
+#define PACK_MOUSE_BUTTON_6         5
+#define PACK_MOUSE_BUTTON_7         6
+#define PACK_MOUSE_BUTTON_8         7
+#define PACK_MOUSE_BUTTON_LAST      PACK_MOUSE_BUTTON_8
+#define PACK_MOUSE_BUTTON_LEFT      PACK_MOUSE_BUTTON_1
+#define PACK_MOUSE_BUTTON_RIGHT     PACK_MOUSE_BUTTON_2
+#define PACK_MOUSE_BUTTON_MIDDLE    PACK_MOUSE_BUTTON_3
