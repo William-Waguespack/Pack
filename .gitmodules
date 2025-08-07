@@ -7,3 +7,6 @@
 [submodule "Pack/vendor/imgui"]
 	path = Pack/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Pack/vendor/glm"]
+	path = Pack/vendor/glm
+	url = https://github.com/g-truc/glm

@@ -23,6 +23,8 @@ namespace Pack
 	};
 }
 
+
+
 //Core log Macros
 #define PACK_CORE_ERROR(...) ::Pack::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define PACK_CORE_WARN(...)  ::Pack::Log::GetCoreLogger()->warn(__VA_ARGS__)
@@ -36,5 +38,4 @@ namespace Pack
 #define PACK_INFO(...)  ::Pack::Log::GetClientLogger()->info(__VA_ARGS__)
 #define PACK_TRACE(...) ::Pack::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define PACK_FATAL(...) ::Pack::Log::GetClientLogger()->fatal(__VA_ARGS__)
-
 

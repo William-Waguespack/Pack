@@ -1,6 +1,8 @@
 #pragma once
 #include "Pack/Window.h"
+#include "Pack/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
+
 
 namespace Pack
 {
@@ -31,6 +33,7 @@ namespace Pack
 	private:
 
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

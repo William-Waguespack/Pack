@@ -4,6 +4,10 @@
 #include "Pack/Window.h"
 #include "Pack/Events/ApplicationEvent.h"
 #include "Pack/LayerStack.h"
+#include "Pack/ImGui/ImGuiLayer.h"
+
+#include "Pack/Renderer/Shader.h"
+#include "Pack/Renderer/Buffer.h"
 
 namespace Pack
 {
@@ -26,8 +30,15 @@ namespace Pack
 		bool OnWindowClosed(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
+
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		unsigned int m_VertexArray;
+		std::unique_ptr<Shader> m_Shader;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 
 	private:
 		static Application* s_Instance;

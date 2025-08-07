@@ -2,11 +2,15 @@
 
 
 #ifdef PACK_PLATFORM_WINDOWS
+#if PACK_DYNAMIC_LINK
 	#ifdef PACK_BUILD_DLL
 		#define PACK_API __declspec(dllexport)
 	#else
 		#define PACK_API __declspec(dllimport)
 	#endif
+#else
+#define PACK_API
+#endif
 #else
 	#error Pack only Supprots Windows!
 #endif

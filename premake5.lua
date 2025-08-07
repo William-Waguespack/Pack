@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Pack/vendor/GLFW/include"
 IncludeDir["Glad"] = "Pack/vendor/Glad/include"
 IncludeDir["ImGui"] = "Pack/vendor/imgui"
+IncludeDir["glm"] = "Pack/vendor/glm"
 
 include "Pack/vendor/GLFW"
 include "Pack/vendor/Glad"
@@ -23,8 +24,10 @@ include "Pack/vendor/imgui"
 
 project "Pack"
     location "Pack"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
+    staticruntime "on"
+    cppdialect "C++17"
     
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -35,7 +38,14 @@ project "Pack"
     files
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.inl"
+    }
+
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
     }
 
     includedirs
@@ -44,7 +54,8 @@ project "Pack"
         "%{prj.name}/src",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -55,10 +66,10 @@ project "Pack"
         "opengl32.lib"
     }
 
+    
+
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "Off"
         systemversion "latest"
 
         defines
@@ -71,31 +82,29 @@ project "Pack"
         
         buildoptions { "/utf-8" }
 
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
 
     filter "configurations:Debug"
         defines "PACK_DEBUG"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         defines "PACK_RELEASE"
         runtime "Release"
-        optimize "On"
+        optimize "on"
         
 
     filter "configurations:Dist"
         defines "PACK_DIST"
         runtime "Release"
-        optimize "On"
+        optimize "on"
 
 project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    staticruntime "on"
+    cppdialect "C++17"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -109,7 +118,9 @@ project "Sandbox"
     includedirs
     {
         "Pack/vendor/spdlog/include",
-        "Pack/src"
+        "Pack/src",
+        "%{IncludeDir.glm}",
+        "Pack/vendor"
     }
 
     links
@@ -118,8 +129,6 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "Off"
         systemversion "latest"
 
         defines
@@ -132,14 +141,14 @@ project "Sandbox"
     filter "configurations:Debug"
         defines "PACK_DEBUG"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         defines "PACK_RELEASE"
         runtime "Release"
-        optimize "On"
+        optimize "on"
         
     filter "configurations:Dist"
         defines "PACK_DIST"
         runtime "Release"
-        optimize "On"
+        optimize "on"

@@ -27,4 +27,7 @@ namespace Pack
 	void Layer::OnEvent(Event& event)
 	{
 	}
+	void Layer::OnImGuiRender()
+	{
+	}
 }
